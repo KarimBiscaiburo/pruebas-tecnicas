@@ -3,11 +3,11 @@ import { AddToCartIcon, RemoveFromCartIcon } from './Icons'
 import { useCart } from '../hooks/useCart'
 
 export function Products ({ products }) {
-  const { addToCart, removeFromCart, cart } = useCart()
+  const { addToCart, removeFromCart, state } = useCart()
 
   const checkProductInCart = product => {
     // .some return true or false if at least one element of an array meets with the condition
-    return cart.some(item => item.id === product.id)
+    return state.some(item => item.id === product.id)
   }
 
   return (
